@@ -1,0 +1,166 @@
+:root{
+    --main-color: teal;
+}
+body{
+    background-image: url("/assets/images/image.png");
+    background-size: cover;
+}
+#app{
+    margin: 20px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.product-item{
+    width: 400px;
+    height: 400px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px -1px rgb(0 0 0 / 60%);
+}
+.product-item:hover{
+    transform: scale(1.01);
+    background-color: var(--main-color);
+    border: 2px solid var(--main-color);
+    cursor: pointer;
+}
+.product-item:hover .product-name,
+.product-item:hover .regular-price,
+.product-item:hover .sold-price{
+    color: white;
+}
+
+.product-item img{
+    width: 400px;
+    height: 300px;
+    
+}
+.product-name{
+    font-weight: bold;
+    font-size: 1.9rem;
+    color: var(--main-color);
+}
+.product-item .regular-price{
+    font-weight: bold;
+    font-size: 1.9rem;
+}
+.product-item .regular-price del::after{
+    content: '€';
+}
+.product-item .sold-price{
+    font-weight: bold;
+    font-size: 2.9rem;
+}
+.product-item .sold-price::after{
+    content: ' €';
+}
+/******************* Menu *******************/
+header{
+    align-items: center;
+    background-color: var(--main-color);
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    cursor: pointer;
+}
+.slider{
+    height: 450px;
+    background-image: url("/assets/images/9.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#logo{
+    color: white;
+    font-weight: bold;
+    padding-left: 10px;
+    font-size: 2.5rem;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+header ul li{
+    color: white;
+    font-weight: bold;
+    white-space: nowrap;
+    background-color: var(--main-color);
+    height: 70px;
+    line-height: 70px;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+ul li:hover{
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+
+/************** ADD TO CART ************/
+.add-to-cart{
+    background-color: var(--main-color);
+    color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 1.4rem;
+    padding: 15px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    font-weight: bold;
+    display: none;
+}
+.add-to-cart::before{
+    content: "🛒";
+    color: white;
+}
+.product-item:hover .add-to-cart{
+    display: block;
+}
+/************** THEME ************/
+.theme-color{
+    right: 20px;
+    bottom:  200px;
+}
+.theme-color div {
+    padding: 10px;
+    margin: 10px 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+/************** FOOTER ************/
+footer{
+    background-color: var(--main-color);
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.8rem;
+    height: 300px;
+    color: white;
+}
+footer h2{
+    padding: 20px 0;
+}
+/************** MEDIA ************/
+@media screen and (max-width: 1200px) {
+    header, header ul{
+        flex-direction: column;
+        width: 100%;
+    }
+    header .header-center{
+        width: 100%;
+    }
+    header .header-center ul{
+        gap: 0;
+    }
+    header ul li{
+        min-width: auto;
+        width: 100%;
+        border-bottom: 1px solid white;
+        display: none;
+    }
+    header ul li:last-child{
+        border-bottom: none
+    }
+}
